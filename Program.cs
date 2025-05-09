@@ -4,11 +4,19 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Bodega Básica");
-            Ejemplos.BodegaBasica();
-            
-            Console.WriteLine("\nBodegas Multiples");
-            Ejemplos.MultiBodegaTipada();
+            do
+            {
+                try
+                {
+                    Menu.Principal();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error : {ex.Message}");
+                    Console.WriteLine("Presione ENTER para continuar");
+                    Console.ReadKey();
+                }
+            } while (true);
         }
     }
 }
